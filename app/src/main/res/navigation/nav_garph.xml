@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_garph"
+    app:startDestination="@id/homefragment">
+
+    <fragment
+        android:id="@+id/homefragment"
+        android:name="com.example.format.fragment.homefragment"
+        android:label="homefragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homefragment_to_fragmentdashboard"
+            app:destination="@id/fragmentdashboard" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentdashboard"
+        android:name="com.example.format.fragment.fragmentdashboard"
+        android:label="fragmentdashboard"
+        tools:layout="@layout/framgnet_dashboard">
+
+        <argument  android:name="amount"
+            app:argType="integer"
+            android:defaultValue="-1"/>
+
+        <action
+            android:id="@+id/action_fragmentdashboard_to_fragmentnotif"
+            app:destination="@id/fragmentnotif" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentnotif"
+        android:name="com.example.format.fragment.fragmentnotif"
+        android:label="fragmentnotif"
+        tools:layout="@layout/fragment_notif">
+        <action
+            android:id="@+id/action_fragmentnotif_to_fragmentsetting"
+            app:destination="@id/fragmentsetting" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentsetting"
+        android:name="com.example.format.fragment.fragmentsetting"
+        android:label="fragmentsetting"
+        tools:layout="@layout/settings"/>
+</navigation>
